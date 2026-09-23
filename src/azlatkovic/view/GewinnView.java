@@ -34,19 +34,26 @@ public class GewinnView extends JFrame{
         gesamtPanel.add(gesamtueberschrift);
         gesamtueberschrift.setHorizontalAlignment(SwingConstants.CENTER);
 
-        rundenergebnis = new JLabel("");
+        rundenergebnis = new JLabel("Tippe eine Zahl von 1 bis 9");
         rundenergebnis.setOpaque(true);
         rundenergebnis.setBackground(Color.WHITE);
+        rundenergebnis.setHorizontalAlignment(SwingConstants.CENTER);
         rundenPanel.add(rundenergebnis);
 
-        gesamtPunkte = new JLabel("");
+        gesamtPunkte = new JLabel("Gesamtpunkte: 30");
         gesamtPunkte.setOpaque(true);
         gesamtPunkte.setBackground(Color.WHITE);
+        gesamtPunkte.setHorizontalAlignment(SwingConstants.CENTER);
         gesamtPanel.add(gesamtPunkte);
 
         add(northPanel, BorderLayout.NORTH);
 
-        JPanel inputsPanel = new JPanel(new GridLayout(2, 2));
+
+
+        JPanel inputsPanel = new JPanel(new GridLayout(1, 2));
+
+        JPanel spielerPanel = new JPanel((new GridLayout(2, 1)));
+        JPanel computerPanel = new JPanel(new GridLayout(2, 1));
 
         JLabel spieler = new JLabel("Deine Zahl: ");
         JLabel computer = new JLabel("Computerzahl: ");
@@ -56,11 +63,16 @@ public class GewinnView extends JFrame{
         spielerZahl = new JTextField();
         computerZahl = new JTextField();
         computerZahl.setEditable(false);
+        computerZahl.setBackground(Color.WHITE);
 
-        inputsPanel.add(spieler);
-        inputsPanel.add(computer);
-        inputsPanel.add(spielerZahl);
-        inputsPanel.add(computerZahl);
+
+        spielerPanel.add(spieler);
+        computerPanel.add(computer);
+        spielerPanel.add(spielerZahl);
+        computerPanel.add(computerZahl);
+
+        inputsPanel.add(spielerPanel);
+        inputsPanel.add(computerPanel);
 
         add(inputsPanel, BorderLayout.CENTER);
 
@@ -75,5 +87,9 @@ public class GewinnView extends JFrame{
     public void addActionListener(ActionListener listener){
         spielerZahl.addActionListener(listener);
         nochEinmal.addActionListener(listener);
+    }
+    public static void main(String[] args) {
+        GewinnView view = new GewinnView();
+        view.setVisible(true);
     }
 }
