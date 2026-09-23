@@ -36,6 +36,9 @@ public class GewinnController implements ActionListener {
                 view.setComputerZahl(model.getComputerZahl());
                 view.setRundenergebnis(model.getRundenErgebnis());
                 view.setGesamtPunkte(model.getGesamtPunkte());
+
+                view.spielerZahlDisabled();
+                view.setButtonEnabled(true);
             }catch(NumberFormatException ex){
 
             }

@@ -78,6 +78,7 @@ public class GewinnView extends JFrame{
 
 
         nochEinmal = new JButton("Noch einmal!");
+        nochEinmal.setEnabled(false);
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(nochEinmal);
 
@@ -95,6 +96,14 @@ public class GewinnView extends JFrame{
 
     public JTextField getSpielerZahlField(){
         return spielerZahl;
+    }
+
+    public void spielerZahlDisabled(){
+        spielerZahl.setEditable(false);
+    }
+
+    public void setButtonEnabled(boolean enabled){
+        nochEinmal.setEnabled(enabled);
     }
 
     public JButton getButton(){
@@ -123,8 +132,10 @@ public class GewinnView extends JFrame{
 
     public void rundeloeschen(){
         spielerZahl.setText("");
+        spielerZahl.setEditable(true);
         computerZahl.setText("");
         rundenergebnis.setText("Tippe eine Zahl von 1 bis 9");
+        nochEinmal.setEnabled(false);
     }
 
 }
