@@ -9,4 +9,16 @@ public class GewinnModel {
     public GewinnModel(){
         gesamtPunkte = 30;
     }
+    public int getGesamtPunkte() {
+        return gesamtPunkte;
+    }
+
+    public int getComputerZahl() {
+        return computerZahl;
+    }
+
+    public int getRundenErgebnis() {
+        return rundenErgebnis;
+    }
+
 }
