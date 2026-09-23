@@ -88,6 +88,45 @@ public class GewinnView extends JFrame{
         spielerZahl.addActionListener(listener);
         nochEinmal.addActionListener(listener);
     }
+
+    public String getSpielerZahl(){
+        return spielerZahl.getText();
+    }
+
+    public JTextField getSpielerZahlField(){
+        return spielerZahl;
+    }
+
+    public JButton getButton(){
+        return nochEinmal;
+    }
+
+    public void setComputerZahl(int zahl){
+        computerZahl.setText(String.valueOf(zahl));
+    }
+
+    public void setRundenergebnis(int ergebnis){
+        if(ergebnis == 20){
+            rundenergebnis.setText("+20");
+        }
+        else if(ergebnis == 5){
+            rundenergebnis.setText("+5");
+        }
+        else if(ergebnis == -10) {
+            rundenergebnis.setText("-10");
+        }
+    }
+
+    public void setGesamtPunkte(int punkte){
+        gesamtPunkte.setText(String.valueOf(punkte));
+    }
+
+    public void rundeloeschen(){
+        spielerZahl.setText("");
+        computerZahl.setText("");
+        rundenergebnis.setText("Tippe eine Zahl von 1 bis 9");
+    }
+
     public static void main(String[] args) {
         GewinnView view = new GewinnView();
         view.setVisible(true);
