@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class ControllerView extends JFrame{
+public class GewinnView extends JFrame{
     private JLabel gesamtPunkte;
     private JLabel rundenergebnis;
     private JTextField spielerZahl;
@@ -11,5 +11,7 @@ public class ControllerView extends JFrame{
 
     private JButton nochEinmal;
 
+public GewinnView(){
 
+}
 }
