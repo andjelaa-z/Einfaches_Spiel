@@ -39,9 +39,10 @@ public class GewinnController implements ActionListener {
             }catch(NumberFormatException ex){
 
             }
-            if(e.getSource() == view.getButton()){
-                view.rundeloeschen();
-            }
+
+        }
+        if(e.getSource() == view.getButton()){
+            view.rundeloeschen();
         }
     }
     public static void main(String[] args) {
