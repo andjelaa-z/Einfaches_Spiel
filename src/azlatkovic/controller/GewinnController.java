@@ -34,8 +34,10 @@ public class GewinnController implements ActionListener {
                 model.berechneRunde(spielerZahl);
 
                 view.setComputerZahl(model.getComputerZahl());
-                view.setRundenergebnis(model.getRundenErgebnis());
+                view.setRundenergebnis(model.getRundenErgebnis(), model.hatGewonnen(), model.hatVerloren());
                 view.setGesamtPunkte(model.getGesamtPunkte());
+
+                view.setFarben(model.getRundenErgebnis(), model.hatGewonnen(), model.hatVerloren());
 
                 view.spielerZahlDisabled();
                 view.setButtonEnabled(true);

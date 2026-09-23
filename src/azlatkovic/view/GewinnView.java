@@ -114,8 +114,13 @@ public class GewinnView extends JFrame{
         computerZahl.setText(String.valueOf(zahl));
     }
 
-    public void setRundenergebnis(int ergebnis){
-        if(ergebnis == 20){
+    public void setRundenergebnis(int ergebnis, boolean gewonnen, boolean verloren){
+        if(gewonnen){
+            rundenergebnis.setText("Gewonnen!");
+        }else if(verloren){
+            rundenergebnis.setText("Verloren!");
+        }
+        else if(ergebnis == 20){
             rundenergebnis.setText("+20");
         }
         else if(ergebnis == 5){
@@ -136,6 +141,20 @@ public class GewinnView extends JFrame{
         computerZahl.setText("");
         rundenergebnis.setText("Tippe eine Zahl von 1 bis 9");
         nochEinmal.setEnabled(false);
+    }
+
+    public void setFarben(int ergebnis, boolean gewonnen, boolean verloren){
+        if(gewonnen || ergebnis > 0){
+            rundenergebnis.setBackground(Color.GREEN);
+            gesamtPunkte.setBackground(Color.GREEN);
+        }else if(verloren || ergebnis < 0){
+            rundenergebnis.setBackground(Color.RED);
+            gesamtPunkte.setBackground(Color.RED);
+        }else{
+            rundenergebnis.setBackground(Color.WHITE);
+            gesamtPunkte.setBackground(Color.WHITE);
+        }
+
     }
 
 }
