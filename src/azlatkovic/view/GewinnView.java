@@ -127,8 +127,4 @@ public class GewinnView extends JFrame{
         rundenergebnis.setText("Tippe eine Zahl von 1 bis 9");
     }
 
-    public static void main(String[] args) {
-        GewinnView view = new GewinnView();
-        view.setVisible(true);
-    }
 }
