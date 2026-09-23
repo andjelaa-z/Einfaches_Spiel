@@ -39,8 +39,15 @@ public class GewinnController implements ActionListener {
 
                 view.setFarben(model.getRundenErgebnis(), model.hatGewonnen(), model.hatVerloren());
 
-                view.spielerZahlDisabled();
-                view.setButtonEnabled(true);
+                if(model.hatGewonnen() || model.hatVerloren()){
+                    view.spielerZahlDisabled();
+                    view.setButtonEnabled(false);
+
+                }else{
+                    view.spielerZahlDisabled();
+                    view.setButtonEnabled(true);
+                }
+
             }catch(NumberFormatException ex){
 
             }
