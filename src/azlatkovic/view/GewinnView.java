@@ -72,4 +72,8 @@ public class GewinnView extends JFrame{
         add(buttonPanel, BorderLayout.SOUTH);
 
     }
+    public void addActionListener(ActionListener listener){
+        spielerZahl.addActionListener(listener);
+        nochEinmal.addActionListener(listener);
+    }
 }
